@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "Pepe",
+    "name": "Pepe",
+    "symbol": "PEPE",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8000,
+    "initialMarketCapWei": "5000000000000000000000",
+    "remainderTo": "0xd6302976e590b9b947da8774b7f1246164e0ce98"
+  },
+  "notes": "Pepe (src/Pepe.sol:Pepe) is a fixed-supply ERC-20 built on the vendored OpenZeppelin Contracts v5.0.2 ERC20. Its constructor takes no arguments and mints the whole supply of 1,000,000,000 PEPE (1000000000000000000000000000 minor units, 18 decimals) once to msg.sender, which is the factory during launchCustom. There is no owner, no mint, burn, pause, blacklist, freeze, upgrade or initialization function, and no transfer fee, tax, rebase or exemption: every transfer, including the factory's transfer to the launch's MerkleDistributor, the pool seed through the PoolManager and claims from the distributor, delivers exactly the requested amount, so the supply cannot change after construction. The launch deploys no application contracts. The factory takes the swarm's share and seeds the pool with 80% of the supply against IMD, opening at a market cap of 5,000 IMD derived from economics.initialMarketCapWei and totalSupply; the remainder of the requester's share goes to economics.remainderTo. pool.initialPrice is provenance only."
+}
